@@ -20,5 +20,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
-      run: mvn -B compile
+
+    - name: Install EGI trustanchors
+      run: sh ci/setup-trust.sh
+
+    - name: Build & Test
+      run: mvn -B test
