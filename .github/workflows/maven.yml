@@ -22,7 +22,7 @@ jobs:
         java-version: 1.8
 
     - name: Install EGI trustanchors
-      run: sh ci/setup-trust.sh
+      run: sudo ci/setup-trust.sh
 
     - name: Build & Test
       run: mvn -B test
